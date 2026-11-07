@@ -128,7 +128,7 @@
             <div id="optionsDropdown" class="hidden absolute right-0 mt-2 w-52 bg-white rounded-xl shadow-xl border border-slate-200 py-1.5 z-40">
               <button type="button" id="managePortalsMenuBtn" class="w-full text-left px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 flex items-center gap-2">
                 <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
-                Add / Manage Submission Portals
+                Manage Submission Links
               </button>
               <button type="button" id="resetDemoBtn" class="w-full text-left px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 flex items-center gap-2">
                 <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
@@ -149,18 +149,18 @@
       </div>
     </div>
 
-    <!-- INTEGRATED EXTERNAL SUBMISSION PLATFORMS & QUICK LAUNCH BAR -->
+    <!-- EXTERNAL SUBMISSION PLATFORMS & QUICK LAUNCH BAR -->
     <div class="bg-slate-900 border-t border-slate-800 text-white py-2">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-2">
         <div class="flex items-center gap-2 text-xs">
           <span class="flex items-center gap-1.5 font-semibold text-sky-400 uppercase tracking-wider text-[11px]">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-            Submission & Workspace Portals:
+            Submission Portals:
           </span>
           <span class="text-slate-400 hidden lg:inline text-[11px]">Direct external submission entry points</span>
         </div>
 
-        <!-- Dynamic Portal Links Container (Includes canvas, Gmail, Google doc, Gemini notebook + Reserved Future Slots) -->
+        <!-- Dynamic Portal Links Container -->
         <div id="globalPortalLinksBar" class="flex flex-wrap items-center gap-2">
           <!-- Populated via JS -->
         </div>
@@ -169,7 +169,7 @@
   </header>
 
   <!-- ======================================================== -->
-  <!-- SECTION A: STUDENT PORTAL (Layout preserved, Task renamed) -->
+  <!-- SECTION A: STUDENT PORTAL -->
   <!-- ======================================================== -->
   <div id="studentPortalContainer" class="flex-1 flex flex-col">
 
@@ -181,7 +181,7 @@
             <button type="button" data-student-view="overview" class="student-tab-btn flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-brand-50 text-brand-800">
               <svg class="w-3.5 h-3.5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>
               <span>Task Overview</span>
-              <span id="studentNavTaskBadge" class="ml-1 text-[10px] px-1.5 py-0.2 rounded-full bg-brand-200 text-brand-900 font-bold">6</span>
+              <span id="studentNavTaskBadge" class="ml-1 text-[10px] px-1.5 py-0.2 rounded-full bg-brand-200 text-brand-900 font-bold">8</span>
             </button>
             <button type="button" data-student-view="timeline" class="student-tab-btn flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900">
               <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
@@ -255,7 +255,7 @@
     <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
       <!-- ========================================== -->
-      <!-- STUDENT VIEW 1: OVERVIEW OF TASKS (Course -> Task) -->
+      <!-- STUDENT VIEW 1: OVERVIEW OF TASKS -->
       <!-- ========================================== -->
       <div id="studentViewOverview" class="student-subview space-y-6">
 
@@ -273,7 +273,7 @@
           <!-- Filter Dropdowns -->
           <div class="flex flex-wrap items-center gap-2 sm:gap-3">
             
-            <!-- Renamed Course -> Task Filter -->
+            <!-- Task Category Filter -->
             <div class="flex items-center gap-1.5 text-xs text-slate-500">
               <span class="font-semibold text-slate-700">Task:</span>
               <select id="taskCategoryFilter" class="bg-slate-50 border border-slate-200 text-slate-700 text-xs rounded-lg px-2.5 py-1.5 focus:ring-1 focus:ring-brand-500 font-medium">
@@ -325,10 +325,10 @@
 
         <!-- Assignments Card Grid -->
         <div id="assignmentsCardGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
-          <!-- Rendered via JS -->
+          <!-- JS Rendered -->
         </div>
 
-        <!-- Assignments Table View (Hidden by default) -->
+        <!-- Assignments Table View -->
         <div id="assignmentsTableView" class="hidden bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
           <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-slate-200 text-left text-sm">
@@ -344,7 +344,7 @@
                 </tr>
               </thead>
               <tbody id="assignmentsTableBody" class="divide-y divide-slate-100 bg-white">
-                <!-- Rendered via JS -->
+                <!-- JS Rendered -->
               </tbody>
             </table>
           </div>
@@ -370,7 +370,7 @@
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
             <div>
               <h2 class="text-base font-bold text-slate-900">Phased Schedule & Milestone Horizon</h2>
-              <p class="text-xs text-slate-500 mt-0.5">Scaffolded milestones and external submission links across all tracks.</p>
+              <p class="text-xs text-slate-500 mt-0.5">Scaffolded milestones across Education, AI, Conferences, and Policy tracks.</p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
               <span class="inline-flex items-center gap-1.5 text-[11px] text-slate-600 bg-slate-100 px-2.5 py-1 rounded-md">
@@ -385,7 +385,7 @@
             </div>
           </div>
           <div id="timelineContainer" class="mt-6 space-y-6">
-            <!-- Rendered via JS -->
+            <!-- JS Rendered -->
           </div>
         </div>
       </div>
@@ -394,7 +394,6 @@
       <!-- STUDENT VIEW 3: PROGRESS & METRICS -->
       <!-- ========================================== -->
       <div id="studentViewProgress" class="student-subview hidden space-y-6">
-        <!-- Scorecard Row -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
           <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
             <div class="flex items-center justify-between mb-3">
@@ -439,7 +438,6 @@
           </div>
         </div>
 
-        <!-- Charts Row -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
             <div class="flex items-center justify-between mb-4">
@@ -468,18 +466,17 @@
           </div>
         </div>
 
-        <!-- Activity Log -->
         <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
-          <h3 class="text-sm font-bold text-slate-900 mb-1">Recent Milestone & Submission Activity</h3>
-          <p class="text-xs text-slate-500 mb-4">Verified checkpoint and external portal launch audit trail</p>
+          <h3 class="text-sm font-bold text-slate-900 mb-1">Recent Milestone Activity</h3>
+          <p class="text-xs text-slate-500 mb-4">Verified checkpoint audit trail</p>
           <div id="activityLogContainer" class="space-y-3">
-            <!-- Rendered via JS -->
+            <!-- JS Rendered -->
           </div>
         </div>
       </div>
 
       <!-- ========================================== -->
-      <!-- STUDENT VIEW 4: SUBMISSION PORTALS DIRECTORY -->
+      <!-- STUDENT VIEW 4: SUBMISSION PORTALS -->
       <!-- ========================================== -->
       <div id="studentViewPortals" class="student-subview hidden space-y-6">
         <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs">
@@ -494,9 +491,8 @@
             </button>
           </div>
 
-          <!-- Integrated & Future Portals Grid -->
           <div id="portalsDirectoryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-            <!-- Rendered via JS -->
+            <!-- JS Rendered -->
           </div>
         </div>
       </div>
@@ -506,7 +502,6 @@
       <!-- ========================================== -->
       <div id="studentViewFocus" class="student-subview hidden space-y-6">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <!-- Focus Timer -->
           <div class="lg:col-span-6 bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-6">
@@ -537,7 +532,6 @@
               </div>
             </div>
 
-            <!-- Ambient Sound Generator -->
             <div class="mt-8 pt-5 border-t border-slate-100">
               <div class="flex items-center justify-between mb-2">
                 <div class="flex items-center gap-2">
@@ -558,30 +552,29 @@
             </div>
           </div>
 
-          <!-- Academic Methodology Card -->
           <div class="lg:col-span-6 bg-white p-6 rounded-2xl border border-slate-200 shadow-xs space-y-4">
             <div class="flex items-center gap-2">
               <span class="p-2 bg-indigo-50 text-indigo-600 rounded-xl">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
               </span>
               <div>
-                <h3 class="text-base font-bold text-slate-900">Task Sections & Integrated Submission Portals</h3>
-                <p class="text-xs text-slate-500">Seamless workflow from phased planning to final submission</p>
+                <h3 class="text-base font-bold text-slate-900">Task Sections & External Submission Workflow</h3>
+                <p class="text-xs text-slate-500">Autonomous personalized milestone scheduling with direct portal links</p>
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-600">
               <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">
                 <strong class="text-slate-800 block mb-0.5">🤖 AI in Education</strong>
-                LLM ethics, academic integrity policies, personalized tutoring scaffolds.
+                LLM ethics, academic integrity policies, reflection log assignments.
               </div>
               <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">
                 <strong class="text-slate-800 block mb-0.5">🎤 Conferences</strong>
-                EdTech conference presentations, poster sessions, and symposium briefs.
+                EdTech conferences, regional symposia, workshop bootcamps, and debriefs.
               </div>
               <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">
                 <strong class="text-slate-800 block mb-0.5">📜 Bills</strong>
-                Legislative bill reviews, state educational funding acts, student data privacy.
+                Meeting refunds, legislative briefs, grant requests, and budget vouchers.
               </div>
               <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">
                 <strong class="text-slate-800 block mb-0.5">🎯 Activities</strong>
@@ -604,11 +597,10 @@
   </div>
 
   <!-- ======================================================== -->
-  <!-- SECTION B: TEACHER PORTAL (Classes, Assign Tasks, Submissions) -->
+  <!-- SECTION B: TEACHER PORTAL -->
   <!-- ======================================================== -->
   <div id="teacherPortalContainer" class="hidden flex-1 flex flex-col">
 
-    <!-- Teacher Sub-Navbar -->
     <div class="bg-white border-b border-slate-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between py-2">
@@ -682,15 +674,13 @@
     <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
       <!-- ========================================== -->
-      <!-- TEACHER VIEW 1: SUBMISSION STATUS MONITOR -->
+      <!-- TEACHER VIEW 1: SUBMISSIONS MONITOR -->
       <!-- ========================================== -->
       <div id="teacherViewSubmissions" class="teacher-subview space-y-6">
 
-        <!-- Filter & Search Toolbar -->
         <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
           
           <div class="flex flex-wrap items-center gap-3">
-            <!-- Filter by Class -->
             <div class="flex items-center gap-1.5 text-xs text-slate-500">
               <span class="font-semibold text-slate-700">Filter Class:</span>
               <select id="teacherClassFilter" class="bg-slate-50 border border-slate-200 text-slate-800 text-xs rounded-lg px-2.5 py-1.5 font-medium focus:ring-1 focus:ring-emerald-500">
@@ -698,7 +688,6 @@
               </select>
             </div>
 
-            <!-- Filter by Task Type -->
             <div class="flex items-center gap-1.5 text-xs text-slate-500">
               <span class="font-semibold text-slate-700">Task Type:</span>
               <select id="teacherTypeFilter" class="bg-slate-50 border border-slate-200 text-slate-800 text-xs rounded-lg px-2.5 py-1.5 font-medium focus:ring-1 focus:ring-emerald-500">
@@ -710,7 +699,6 @@
               </select>
             </div>
 
-            <!-- Filter by Submission Status -->
             <div class="flex items-center gap-1.5 text-xs text-slate-500">
               <span class="font-semibold text-slate-700">Status:</span>
               <select id="teacherStatusFilter" class="bg-slate-50 border border-slate-200 text-slate-800 text-xs rounded-lg px-2.5 py-1.5 font-medium focus:ring-1 focus:ring-emerald-500">
@@ -730,7 +718,6 @@
           </div>
         </div>
 
-        <!-- Submissions Roster Table -->
         <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
           <div class="p-4 border-b border-slate-100 flex items-center justify-between">
             <div>
@@ -755,7 +742,7 @@
                 </tr>
               </thead>
               <tbody id="teacherSubmissionsTableBody" class="divide-y divide-slate-100 bg-white">
-                <!-- Rendered via JS -->
+                <!-- JS Rendered -->
               </tbody>
             </table>
           </div>
@@ -778,7 +765,7 @@
         </div>
 
         <div id="teacherClassesGrid" class="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <!-- Rendered via JS -->
+          <!-- JS Rendered -->
         </div>
       </div>
 
@@ -797,7 +784,7 @@
         </div>
 
         <div id="teacherTasksCatalogue" class="space-y-4">
-          <!-- Rendered via JS -->
+          <!-- JS Rendered -->
         </div>
       </div>
 
@@ -818,7 +805,7 @@
           </div>
 
           <div id="teacherPortalsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-            <!-- Rendered via JS -->
+            <!-- JS Rendered -->
           </div>
         </div>
       </div>
@@ -837,7 +824,7 @@
           <div class="w-8 h-8 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center font-bold text-sm">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4" /></svg>
           </div>
-          <h3 id="modalTitle" class="text-base font-bold text-slate-900">Create Scaffolded Project</h3>
+          <h3 id="modalTitle" class="text-base font-bold text-slate-900">Create Scaffolded Phased Project</h3>
         </div>
         <button type="button" id="closeModalBtn" class="text-slate-400 hover:text-slate-600 p-1 rounded-lg">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -850,10 +837,9 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label class="block text-xs font-semibold text-slate-700 mb-1">Deliverable Title <span class="text-rose-500">*</span></label>
-            <input type="text" id="formTitle" required placeholder="e.g. LLM Assessment Policy White Paper" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:bg-white transition" />
+            <input type="text" id="formTitle" required placeholder="e.g. Human&AI assignment" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 focus:bg-white transition" />
           </div>
           <div>
-            <!-- Course renamed to Task -->
             <label class="block text-xs font-semibold text-slate-700 mb-1">Task Section <span class="text-rose-500">*</span></label>
             <select id="formCourse" required class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:ring-2 focus:ring-brand-500 focus:bg-white transition">
               <option value="AI in Education">AI in Education</option>
@@ -866,7 +852,7 @@
           </div>
         </div>
 
-        <!-- Submission Portal / Redirect Selector -->
+        <!-- Submission Point -->
         <div class="p-3 bg-indigo-50/70 rounded-xl border border-indigo-100">
           <label class="block text-xs font-bold text-indigo-950 mb-1.5 flex items-center gap-1.5">
             <svg class="w-3.5 h-3.5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
@@ -875,30 +861,12 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <select id="formSubmissionPortal" class="w-full px-3 py-1.5 bg-white border border-indigo-200 text-slate-800 rounded-lg text-xs font-semibold focus:ring-2 focus:ring-brand-500">
-                <!-- Populated dynamically from state.submissionPortals -->
+                <!-- Dynamically Populated -->
               </select>
             </div>
             <div>
               <input type="url" id="formCustomSubmissionUrl" placeholder="Or enter custom submission URL (https://...)" class="w-full px-3 py-1.5 bg-white border border-indigo-200 text-slate-800 rounded-lg text-xs focus:ring-2 focus:ring-brand-500" />
             </div>
-          </div>
-        </div>
-
-        <!-- Template Selector -->
-        <div class="p-3 bg-brand-50/60 rounded-xl border border-brand-100">
-          <label class="block text-xs font-bold text-brand-900 mb-1">Scaffolding Template (Auto-generates Milestones)</label>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 items-center">
-            <select id="formTemplate" class="w-full px-3 py-1.5 bg-white border border-brand-200 text-slate-800 rounded-lg text-xs font-medium focus:ring-2 focus:ring-brand-500">
-              <option value="research_paper">Policy / Research Paper (5 Milestones)</option>
-              <option value="conference_pitch">Conference / Symposium Pitch (4 Milestones)</option>
-              <option value="bill_analysis">Legislative Bill Brief (4 Milestones)</option>
-              <option value="activity_workshop">Curricular Activity Workshop (4 Milestones)</option>
-              <option value="tefl_practicum">TEFL Acquisition Portfolio (5 Milestones)</option>
-              <option value="custom">Custom Phased Roadmap</option>
-            </select>
-            <p class="text-[11px] text-brand-800 leading-tight">
-              Calculates balanced target deadlines between Start Date and Due Date.
-            </p>
           </div>
         </div>
 
@@ -928,16 +896,16 @@
           </div>
           <div class="sm:col-span-2">
             <label class="block text-xs font-semibold text-slate-700 mb-1">Rubric Objectives / Notes</label>
-            <input type="text" id="formNotes" placeholder="e.g. Include 4 peer-reviewed sources on AI pedagogy" class="w-full px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs focus:ring-2 focus:ring-brand-500" />
+            <input type="text" id="formNotes" placeholder="e.g. reflection on the content covered in that specific session..." class="w-full px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs focus:ring-2 focus:ring-brand-500" />
           </div>
         </div>
 
-        <!-- Phased Steps Form Section -->
+        <!-- Custom Personalized Milestones -->
         <div class="pt-2 border-t border-slate-100">
           <div class="flex items-center justify-between mb-2">
             <div>
               <span class="text-xs font-bold text-slate-800">Scaffolded Milestones</span>
-              <span class="text-[11px] text-slate-500 block">Fine-tune milestone names and dates</span>
+              <span class="text-[11px] text-slate-500 block">Personalize milestone names, dates, and micro-tasks</span>
             </div>
             <button type="button" id="formAddPhaseBtn" class="text-xs text-brand-600 hover:text-brand-800 font-semibold flex items-center gap-1">
               + Add Phase
@@ -972,14 +940,13 @@
             <span id="detailDueDateBadge" class="text-xs text-slate-500 font-medium">Due: Date</span>
           </div>
           <h2 id="detailTitle" class="text-lg font-bold text-slate-900">Deliverable Title</h2>
-          <p id="detailNotes" class="text-xs text-slate-500 mt-0.5">Notes / Rubric</p>
+          <p id="detailNotes" class="text-xs text-slate-500 mt-0.5 italic">Notes / Rubric</p>
         </div>
         <button type="button" id="closeDetailModalBtn" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-lg">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
         </button>
       </div>
 
-      <!-- Detail Progress & External Submission Bar -->
       <div class="px-6 py-3 bg-white border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div class="flex-1">
           <div class="flex items-center justify-between text-xs mb-1">
@@ -991,7 +958,6 @@
           </div>
         </div>
         <div class="flex flex-wrap items-center gap-2">
-          <!-- External Submission Redirect Button -->
           <a id="detailSubmitExternalLink" href="https://canvas.jhu.edu/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-semibold shadow-xs transition">
             <span>Submit on canvas</span>
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
@@ -1026,13 +992,13 @@
   </div>
 
   <!-- ========================================== -->
-  <!-- MODAL: ADD / MANAGE WEBSITE SUBMISSION LINKS -->
+  <!-- MODAL: ADD / MANAGE SUBMISSION LINKS -->
   <!-- ========================================== -->
   <div id="portalManagerModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-lg w-full border border-slate-200 shadow-2xl p-6">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
         <div>
-          <h3 id="portalModalTitle" class="text-base font-bold text-slate-900">Add / Configure Submission Website Link</h3>
+          <h3 id="portalModalTitle" class="text-base font-bold text-slate-900">Configure Submission Website Link</h3>
           <p class="text-xs text-slate-500">Add a new external submission entry point or configure a reserved slot</p>
         </div>
         <button type="button" id="closePortalModalBtn" class="text-slate-400 hover:text-slate-600">
@@ -1044,7 +1010,7 @@
         <input type="hidden" id="editPortalId" value="" />
         <div>
           <label class="block text-xs font-semibold text-slate-700 mb-1">Platform / Website Name <span class="text-rose-500">*</span></label>
-          <input type="text" id="portalFormName" required placeholder="e.g. Turnitin, Gradescope, GitHub, Overleaf" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500" />
+          <input type="text" id="portalFormName" required placeholder="e.g. canvas, Gmail, Google doc, Gemini notebook, Gradescope" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500" />
         </div>
         <div>
           <label class="block text-xs font-semibold text-slate-700 mb-1">Destination URL <span class="text-rose-500">*</span></label>
@@ -1052,16 +1018,16 @@
         </div>
         <div>
           <label class="block text-xs font-semibold text-slate-700 mb-1">Submission Purpose / Description</label>
-          <input type="text" id="portalFormDesc" placeholder="e.g. Upload final PDF or share notebook link" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500" />
+          <input type="text" id="portalFormDesc" placeholder="e.g. Upload final PDF, email advisor, or share doc link" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500" />
         </div>
         <div>
           <label class="block text-xs font-semibold text-slate-700 mb-1">Badge Color Theme</label>
           <select id="portalFormColor" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs">
             <option value="rose">Crimson / Red (Canvas LMS style)</option>
             <option value="amber">Coral / Amber (Gmail style)</option>
-            <option value="blue">Royal Blue (Google Doc style)</option>
-            <option value="purple">Indigo / Violet (Gemini Notebook style)</option>
-            <option value="emerald">Emerald / Teal (Custom Portal)</option>
+            <option value="blue">Royal Blue (Google doc style)</option>
+            <option value="purple">Indigo / Violet (Gemini notebook style)</option>
+            <option value="emerald">Emerald / Teal (Custom Portal style)</option>
           </select>
         </div>
 
@@ -1106,7 +1072,7 @@
         </div>
         <div>
           <label class="block text-xs font-semibold text-slate-700 mb-1">Initial Enrolled Students</label>
-          <input type="number" id="classFormStudents" min="1" max="200" value="26" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-emerald-500" />
+          <input type="number" id="classFormStudents" min="1" max="200" value="28" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-emerald-500" />
         </div>
         <div class="pt-3 flex items-center justify-end gap-2">
           <button type="button" id="cancelClassModalBtn" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-medium">Cancel</button>
@@ -1124,7 +1090,7 @@
       <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
         <div>
           <h3 class="text-base font-bold text-slate-900">Assign Task to Class</h3>
-          <p class="text-xs text-slate-500">Distribute essays, reflections, quizzes, and set external submission portals</p>
+          <p class="text-xs text-slate-500">Distribute essays, reflections, quizzes, or phased projects</p>
         </div>
         <button type="button" id="closeAssignModalBtn" class="text-slate-400 hover:text-slate-600">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -1141,7 +1107,7 @@
           <div>
             <label class="block text-xs font-semibold text-slate-700 mb-1">Target Class <span class="text-rose-500">*</span></label>
             <select id="assignFormClass" required class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:ring-2 focus:ring-emerald-500">
-              <!-- Populated via JS -->
+              <!-- JS Populated -->
             </select>
           </div>
           <div>
@@ -1155,11 +1121,10 @@
           </div>
         </div>
 
-        <!-- Submission Website Selection for Assigned Task -->
         <div class="p-3 bg-emerald-50/70 rounded-xl border border-emerald-200">
           <label class="block text-xs font-bold text-emerald-950 mb-1">Required Submission Website / Portal</label>
           <select id="assignFormPortal" class="w-full px-3 py-1.5 bg-white border border-emerald-200 text-slate-800 rounded-lg text-xs font-semibold focus:ring-2 focus:ring-emerald-500">
-            <!-- Populated dynamically -->
+            <!-- Dynamically Populated -->
           </select>
         </div>
 
@@ -1207,7 +1172,7 @@
           <div class="flex items-center justify-between mb-1.5">
             <span class="font-semibold text-slate-700">Submission Excerpt / Student Note:</span>
             <a id="gradeModalExternalLink" href="https://canvas.jhu.edu/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-brand-600 hover:underline font-bold">
-              <span>Open Submission on Portal</span>
+              <span>Open on Portal</span>
               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
           </div>
@@ -1292,18 +1257,14 @@
       'use strict';
 
       // -------------------------------------------------------------
-      // DEFAULT INTEGRATED SUBMISSION PORTALS (4 core + 3 reserved slots)
-      // 1. https://canvas.jhu.edu/ (Named: canvas)
-      // 2. https://mail.google.com/mail/u/0/#inbox (Named: Gmail)
-      // 3. https://docs.google.com/document/u/0/ (Named: Google doc)
-      // 4. https://notebook.google.com/ (Named: Gemini notebook)
+      // SUBMISSION PORTALS (canvas, Gmail, Google doc, Gemini notebook + reserved slots)
       // -------------------------------------------------------------
       const DEFAULT_SUBMISSION_PORTALS = [
         {
           id: "portal-canvas",
           name: "canvas",
           url: "https://canvas.jhu.edu/",
-          description: "JHU Canvas LMS — Upload final papers, quizzes, and module assignments.",
+          description: "JHU Canvas LMS — Upload formal papers, quizzes, and course project packages.",
           color: "rose",
           isReservedSlot: false
         },
@@ -1311,7 +1272,7 @@
           id: "portal-gmail",
           name: "Gmail",
           url: "https://mail.google.com/mail/u/0/#inbox",
-          description: "Direct email submission to faculty, conference committees, or advisors.",
+          description: "Google Mail — Email reflection logs, poster files, and documents directly to instructors or committees.",
           color: "amber",
           isReservedSlot: false
         },
@@ -1319,7 +1280,7 @@
           id: "portal-gdoc",
           name: "Google doc",
           url: "https://docs.google.com/document/u/0/",
-          description: "Collaborative cloud drafting, peer comments, and live rubric link sharing.",
+          description: "Google Docs — Real-time collaborative drafting, peer reviews, and live rubric comment sharing.",
           color: "blue",
           isReservedSlot: false
         },
@@ -1327,30 +1288,30 @@
           id: "portal-notebook",
           name: "Gemini notebook",
           url: "https://notebook.google.com/",
-          description: "AI research synthesis, literature notebooks, and source compilation.",
+          description: "Gemini AI Notebook — Curated literature synthesis, source note compilation, and research briefs.",
           color: "purple",
           isReservedSlot: false
         },
         {
           id: "portal-slot-5",
-          name: "Future Portal Slot #1",
+          name: "Reserved Slot #1",
           url: "",
-          description: "Reserved entry point — Click to bind a new website submission link.",
+          description: "Reserved entry slot — Click to bind a future website submission link.",
           color: "emerald",
           isReservedSlot: true
         },
         {
           id: "portal-slot-6",
-          name: "Future Portal Slot #2",
+          name: "Reserved Slot #2",
           url: "",
-          description: "Reserved entry point — Click to bind a new website submission link.",
+          description: "Reserved entry slot — Click to bind a future website submission link.",
           color: "emerald",
           isReservedSlot: true
         }
       ];
 
       // -------------------------------------------------------------
-      // SAMPLE DATA: STUDENT VERSION (With Submission Points)
+      // SAMPLE DATA: STUDENT VERSION (All English, exact screenshot tasks)
       // -------------------------------------------------------------
       const SAMPLE_STUDENT_ASSIGNMENTS = [
         {
@@ -1373,7 +1334,7 @@
               completed: false,
               weight: 25,
               subtasks: [
-                { id: "st-r1", text: "Review session notes and associated class lecture images", completed: true },
+                { id: "st-r1", text: "Review session notes and lecture visual artifacts", completed: true },
                 { id: "st-r2", text: "Write 400-word reflection addressing image prompt requirements", completed: false },
                 { id: "st-r3", text: "Dispatch reflection log to instructor via Gmail", completed: false }
               ]
@@ -1385,7 +1346,7 @@
               completed: false,
               weight: 25,
               subtasks: [
-                { id: "st-r4", text: "Synthesize weekly AI pedagogy trial and image artifacts", completed: false },
+                { id: "st-r4", text: "Synthesize weekly AI trial notes and visual requirements", completed: false },
                 { id: "st-r5", text: "Email completed log via Gmail before Wednesday evening", completed: false }
               ]
             },
@@ -1396,7 +1357,7 @@
               completed: false,
               weight: 25,
               subtasks: [
-                { id: "st-r6", text: "Analyze classroom AI feedback loops & session images", completed: false },
+                { id: "st-r6", text: "Analyze classroom interaction cases and conceptual framework", completed: false },
                 { id: "st-r7", text: "Email completed log via Gmail before Wednesday evening", completed: false }
               ]
             },
@@ -1414,60 +1375,134 @@
           ]
         },
         {
-          id: "asg-ai-edu",
-          title: "Generative AI Policy & Plagiarism Detection Framework",
+          id: "asg-ai-human-ai",
+          title: "Human&AI assignment",
           course: "AI in Education",
           priority: "HIGH",
           startDate: "2026-11-01",
           dueDate: "2026-11-22",
           weight: 25,
-          submissionPortalId: "portal-notebook",
-          submissionPortalName: "Gemini notebook",
-          submissionUrl: "https://notebook.google.com/",
-          notes: "Evaluate classroom implications of LLMs and curate source notebooks before final synthesis.",
+          submissionPortalId: "portal-canvas",
+          submissionPortalName: "canvas",
+          submissionUrl: "https://canvas.jhu.edu/",
+          notes: "Evaluate classroom implications of LLMs and curate source noteboc",
           phases: [
             {
-              id: "p1",
-              title: "Problem Scope & Institutional Benchmark",
-              targetDate: "2026-11-05",
+              id: "p-hai-1",
+              title: "Create the website",
+              targetDate: "2026-11-07",
               completed: true,
-              weight: 20,
+              weight: 50,
               subtasks: [
-                { id: "st1", text: "Survey 3 major university AI policy statements", completed: true },
-                { id: "st2", text: "Identify key risks: hallucination, bias, IP rights", completed: true }
+                { id: "st-hai-1", text: "Build frontend application structure", completed: true },
+                { id: "st-hai-2", text: "Configure responsive layout and visual progress", completed: true }
               ]
             },
             {
-              id: "p2",
-              title: "Pedagogical Scaffolding & Prompt Rubrics",
-              targetDate: "2026-11-10",
+              id: "p-hai-2",
+              title: "Final Review & External Submission",
+              targetDate: "2026-11-08",
               completed: true,
-              weight: 25,
+              weight: 50,
               subtasks: [
-                { id: "st3", text: "Design ethical prompt guidelines for students", completed: true },
-                { id: "st4", text: "Interview 2 high school teachers on ChatGPT use", completed: true }
+                { id: "st-hai-3", text: "Audit rubrics and review deliverables", completed: true },
+                { id: "st-hai-4", text: "Submit final link via canvas", completed: true }
+              ]
+            }
+          ]
+        },
+        {
+          id: "asg-conf-bootcamp",
+          title: "Conference Connect Bootcamp",
+          course: "Conferences",
+          priority: "MEDIUM",
+          startDate: "2026-10-25",
+          dueDate: "2026-11-07",
+          weight: 50,
+          submissionPortalId: "portal-gmail",
+          submissionPortalName: "Gmail",
+          submissionUrl: "https://mail.google.com/mail/u/0/#inbox",
+          notes: "Email final camera-ready poster PDF and speaker bio to the sympos",
+          phases: [
+            {
+              id: "p-ccb-1",
+              title: "online meating",
+              targetDate: "2026-10-22",
+              completed: false,
+              weight: 50,
+              subtasks: [
+                { id: "st-ccb-1", text: "Attend virtual onboarding orientation", completed: false }
               ]
             },
             {
-              id: "p3",
-              title: "Drafting Policy Document & Recommendations",
-              targetDate: "2026-11-17",
+              id: "p-ccb-2",
+              title: "offline meating",
+              targetDate: "2026-11-07",
               completed: false,
-              weight: 35,
+              weight: 50,
               subtasks: [
-                { id: "st5", text: "Draft 6-page comprehensive white paper", completed: true },
-                { id: "st6", text: "Include flowcharts for acceptable vs prohibited AI assistance", completed: false }
+                { id: "st-ccb-2", text: "In-person workshop and breakout networking", completed: false }
+              ]
+            }
+          ]
+        },
+        {
+          id: "asg-conf-cies",
+          title: "CIES Northeast Regional Conference",
+          course: "Conferences",
+          priority: "MEDIUM",
+          startDate: "2026-11-07",
+          dueDate: "2026-11-30",
+          weight: 50,
+          submissionPortalId: "portal-gmail",
+          submissionPortalName: "Gmail",
+          submissionUrl: "https://mail.google.com/mail/u/0/#inbox",
+          notes: "e.g. Include 4 peer-reviewed sources on AI pedagogy",
+          phases: [
+            {
+              id: "p-cies-1",
+              title: "Columbia University, New York offline meating",
+              targetDate: "2026-11-13",
+              completed: false,
+              weight: 50,
+              subtasks: [
+                { id: "st-cies-1", text: "Attend conference presentations at Columbia University", completed: false }
               ]
             },
             {
-              id: "p4",
-              title: "Faculty Feedback & Final Submission on Gemini notebook",
-              targetDate: "2026-11-22",
+              id: "p-cies-2",
+              title: "Reflection meating",
+              targetDate: "2026-11-30",
               completed: false,
-              weight: 20,
+              weight: 50,
               subtasks: [
-                { id: "st7", text: "Conduct peer review session", completed: false },
-                { id: "st8", text: "Publish curated notebook & policy brief", completed: false }
+                { id: "st-cies-2", text: "Conduct post-conference debrief and submit summary", completed: false }
+              ]
+            }
+          ]
+        },
+        {
+          id: "asg-bills-refunds",
+          title: "Meeting refunds",
+          course: "Bills",
+          priority: "MEDIUM",
+          startDate: "2026-11-04",
+          dueDate: "2026-11-19",
+          weight: 100,
+          submissionPortalId: "portal-gmail",
+          submissionPortalName: "Gmail",
+          submissionUrl: "https://mail.google.com/mail/u/0/#inbox",
+          notes: "provide the details to Joe",
+          phases: [
+            {
+              id: "p-mr-1",
+              title: "$250 meeting refunds",
+              targetDate: "2026-11-16",
+              completed: false,
+              weight: 100,
+              subtasks: [
+                { id: "st-mr-1", text: "Gather expense receipts and invoices", completed: true },
+                { id: "st-mr-2", text: "Email the reimbursement documentation to Joe", completed: false }
               ]
             }
           ]
@@ -1483,10 +1518,10 @@
           submissionPortalId: "portal-canvas",
           submissionPortalName: "canvas",
           submissionUrl: "https://canvas.jhu.edu/",
-          notes: "Design acoustic phonetics diagnostic and upload portfolio to JHU Canvas.",
+          notes: "Design acoustic phonetics diagnostic and corrective drills for English language learners.",
           phases: [
             {
-              id: "p1",
+              id: "p11",
               title: "Learner Needs Analysis & Phonetic Profile",
               targetDate: "2026-11-07",
               completed: true,
@@ -1497,7 +1532,7 @@
               ]
             },
             {
-              id: "p2",
+              id: "p12",
               title: "Communicative Intervention Lesson Plan",
               targetDate: "2026-11-14",
               completed: false,
@@ -1508,7 +1543,7 @@
               ]
             },
             {
-              id: "p3",
+              id: "p13",
               title: "Classroom Teaching Trial & Video Reflection",
               targetDate: "2026-11-20",
               completed: false,
@@ -1519,107 +1554,13 @@
               ]
             },
             {
-              id: "p4",
-              title: "Portfolio Synthesis & Submission via canvas",
+              id: "p14",
+              title: "Portfolio Synthesis & Upload to canvas",
               targetDate: "2026-11-25",
               completed: false,
               weight: 20,
               subtasks: [
                 { id: "st17", text: "Compile final video clips and upload to JHU Canvas", completed: false }
-              ]
-            }
-          ]
-        },
-        {
-          id: "asg-conf",
-          title: "EdTech Innovation Summit 2027 Poster & Talk",
-          course: "Conferences",
-          priority: "MEDIUM",
-          startDate: "2026-10-25",
-          dueDate: "2026-11-12",
-          weight: 15,
-          submissionPortalId: "portal-gmail",
-          submissionPortalName: "Gmail",
-          submissionUrl: "https://mail.google.com/mail/u/0/#inbox",
-          notes: "Email final camera-ready poster PDF and speaker bio to the symposium chairs via Gmail.",
-          phases: [
-            {
-              id: "p1",
-              title: "Abstract Submission & Peer Acceptance",
-              targetDate: "2026-10-28",
-              completed: true,
-              weight: 25,
-              subtasks: [{ id: "st21", text: "Submit 300-word blind abstract", completed: true }]
-            },
-            {
-              id: "p2",
-              title: "Poster Layout & Infographic Visuals",
-              targetDate: "2026-11-04",
-              completed: true,
-              weight: 30,
-              subtasks: [{ id: "st22", text: "Draft high-resolution 36x48 poster", completed: true }]
-            },
-            {
-              id: "p3",
-              title: "5-Minute Elevator Pitch Rehearsal",
-              targetDate: "2026-11-09",
-              completed: true,
-              weight: 25,
-              subtasks: [{ id: "st23", text: "Record 3 practice takes with stopwatch", completed: true }]
-            },
-            {
-              id: "p4",
-              title: "Dispatch Final Deck via Gmail",
-              targetDate: "2026-11-12",
-              completed: true,
-              weight: 20,
-              subtasks: [{ id: "st24", text: "Send final deck & handout link via Gmail", completed: true }]
-            }
-          ]
-        },
-        {
-          id: "asg-bills",
-          title: "Legislative Brief: State Senate Bill 402 EdTech Funding",
-          course: "Bills",
-          priority: "MEDIUM",
-          startDate: "2026-11-04",
-          dueDate: "2026-11-19",
-          weight: 20,
-          submissionPortalId: "portal-gdoc",
-          submissionPortalName: "Google doc",
-          submissionUrl: "https://docs.google.com/document/u/0/",
-          notes: "Draft collaborative legislative brief in Google doc and share comment access with policy cohort.",
-          phases: [
-            {
-              id: "p1",
-              title: "Bill Text Analysis & Clause Breakdown",
-              targetDate: "2026-11-08",
-              completed: false,
-              weight: 25,
-              subtasks: [
-                { id: "st31", text: "Annotate Sections 4-8 on school district grants", completed: true },
-                { id: "st32", text: "Cross-reference state department of education budget", completed: false }
-              ]
-            },
-            {
-              id: "p2",
-              title: "Stakeholder Impact Matrix",
-              targetDate: "2026-11-13",
-              completed: false,
-              weight: 35,
-              subtasks: [
-                { id: "st33", text: "Map benefits for low-income Title I schools", completed: false },
-                { id: "st34", text: "Calculate per-pupil funding disparity impact", completed: false }
-              ]
-            },
-            {
-              id: "p3",
-              title: "Executive Policy Memo Submission on Google doc",
-              targetDate: "2026-11-19",
-              completed: false,
-              weight: 40,
-              subtasks: [
-                { id: "st35", text: "Write 3-page memo in Google doc & submit link", completed: false }
               ]
             }
           ]
@@ -1635,10 +1576,10 @@
           submissionPortalId: "portal-canvas",
           submissionPortalName: "canvas",
           submissionUrl: "https://canvas.jhu.edu/",
-          notes: "Develop interactive 20-minute jigsaw simulation and submit lesson kit on canvas.",
+          notes: "Develop interactive 20-minute jigsaw simulation for collaborative inquiry and upload to canvas.",
           phases: [
             {
-              id: "p1",
+              id: "p41",
               title: "Learning Objectives & Station Blueprint",
               targetDate: "2026-11-06",
               completed: true,
@@ -1646,7 +1587,7 @@
               subtasks: [{ id: "st41", text: "Align with Bloom's Taxonomy analysis level", completed: true }]
             },
             {
-              id: "p2",
+              id: "p42",
               title: "Station Materials & Worksheets",
               targetDate: "2026-11-11",
               completed: false,
@@ -1654,7 +1595,7 @@
               subtasks: [{ id: "st42", text: "Print color station role cue cards", completed: false }]
             },
             {
-              id: "p3",
+              id: "p43",
               title: "Pilot Facilitation & Upload to canvas",
               targetDate: "2026-11-16",
               completed: false,
@@ -1677,8 +1618,8 @@
           notes: "Investigate how Finland and Singapore balance well-being with mathematics assessment in Google doc.",
           phases: [
             {
-              id: "p1",
-              title: "PISA Metrics & Curricular Frameworks",
+              id: "p51",
+              title: "OECD PISA 2024 Metrics Extraction",
               targetDate: "2026-11-10",
               completed: false,
               weight: 25,
@@ -1688,7 +1629,7 @@
               ]
             },
             {
-              id: "p2",
+              id: "p52",
               title: "Qualitative Case Study Synthesis",
               targetDate: "2026-11-18",
               completed: false,
@@ -1698,8 +1639,8 @@
               ]
             },
             {
-              id: "p3",
-              title: "Comparative Report Submission via Google doc",
+              id: "p53",
+              title: "Final Comparative Report & Google doc Sharing",
               targetDate: "2026-11-28",
               completed: false,
               weight: 40,
@@ -1712,7 +1653,7 @@
       ];
 
       // -------------------------------------------------------------
-      // SAMPLE DATA: TEACHER VERSION (Classes, Assigned Tasks, Submissions)
+      // TEACHER PORTAL DATA (English)
       // -------------------------------------------------------------
       const SAMPLE_TEACHER_CLASSES = [
         {
@@ -1886,7 +1827,7 @@
           status: "LATE",
           score: null,
           maxScore: 40,
-          excerpt: "Quiz overdue on canvas. Reminder sent via Gmail.",
+          excerpt: "Quiz overdue on canvas. Automated reminder notification generated.",
           feedback: ""
         },
         {
@@ -1902,7 +1843,7 @@
           status: "IN_PROGRESS",
           score: null,
           maxScore: 100,
-          excerpt: "Student has completed Phase 1 (Scope) and Phase 2 (Scaffolding). Draft in progress.",
+          excerpt: "Completed Phase 1 and Phase 2. Draft currently in progress.",
           feedback: ""
         },
         {
@@ -1922,49 +1863,6 @@
           feedback: ""
         }
       ];
-
-      // -------------------------------------------------------------
-      // TEMPLATES FOR SCAFFOLDING PHASES
-      // -------------------------------------------------------------
-      const PHASE_TEMPLATES = {
-        research_paper: [
-          { title: "Problem Definition & Literature Scan", fraction: 0.15, weight: 15, subtasks: ["Define inquiry question", "Synthesize 4+ scholarly sources"] },
-          { title: "Methodology & Analytical Framework", fraction: 0.35, weight: 25, subtasks: ["Structure evaluation criteria", "Collect primary/secondary evidence"] },
-          { title: "Detailed Outline & Core Arguments", fraction: 0.55, weight: 20, subtasks: ["Draft argument outline", "Formulate counter-arguments"] },
-          { title: "Full First Draft Synthesis", fraction: 0.80, weight: 25, subtasks: ["Write all substantive sections", "Embed comparative data tables"] },
-          { title: "Peer Review, Rubric Check & External Submission", fraction: 1.0, weight: 15, subtasks: ["Conduct peer audit", "Submit via designated external portal"] }
-        ],
-        conference_pitch: [
-          { title: "Abstract Submission & Acceptance", fraction: 0.20, weight: 20, subtasks: ["Write 300-word proposal", "Submit to review committee"] },
-          { title: "Visual Deck & Poster Layout", fraction: 0.55, weight: 35, subtasks: ["Design clean presentation visuals", "Format infographics"] },
-          { title: "Rehearsal & Timing Optimization", fraction: 0.80, weight: 25, subtasks: ["Timed mock presentation", "Refine delivery"] },
-          { title: "Handouts & Live Symposium Submission", fraction: 1.0, weight: 20, subtasks: ["Prepare audience QR codes", "Send final package via portal"] }
-        ],
-        bill_analysis: [
-          { title: "Statute Text Review & Annotations", fraction: 0.25, weight: 25, subtasks: ["Read legislative text", "Highlight funding & mandate clauses"] },
-          { title: "Fiscal & District Impact Modeling", fraction: 0.50, weight: 25, subtasks: ["Model demographic impact", "Estimate implementation costs"] },
-          { title: "Stakeholder Positions & Policy Matrix", fraction: 0.75, weight: 30, subtasks: ["Interview educational leaders", "Draft pros/cons summary"] },
-          { title: "Executive Committee Briefing Memo", fraction: 1.0, weight: 20, subtasks: ["Format 3-page policy memo", "Submit via external portal"] }
-        ],
-        activity_workshop: [
-          { title: "Pedagogical Needs Assessment", fraction: 0.25, weight: 25, subtasks: ["Identify learning gap", "Select collaborative format"] },
-          { title: "Material & Scaffold Development", fraction: 0.60, weight: 35, subtasks: ["Build student task cards", "Formulate formative rubric"] },
-          { title: "Classroom Pilot & Peer Feedback", fraction: 0.85, weight: 25, subtasks: ["Facilitate 30m trial", "Collect student survey ratings"] },
-          { title: "Curricular Refinement & Final Upload", fraction: 1.0, weight: 15, subtasks: ["Publish finalized lesson plan", "Submit to course portal"] }
-        ],
-        tefl_practicum: [
-          { title: "Linguistic Diagnostic & Learner Profile", fraction: 0.20, weight: 20, subtasks: ["Record spoken language sample", "Identify target phonemes/grammar"] },
-          { title: "Scaffolded Lesson & Activity Design", fraction: 0.45, weight: 25, subtasks: ["Create communicative activities", "Prepare visual realia"] },
-          { title: "Teaching Delivery & Classroom Video", fraction: 0.70, weight: 30, subtasks: ["Teach 45-minute lesson", "Record video for portfolio"] },
-          { title: "Student Progress Assessment", fraction: 0.85, weight: 15, subtasks: ["Administer post-lesson check", "Calculate acquisition gains"] },
-          { title: "Reflective Synthesis & Portal Upload", fraction: 1.0, weight: 10, subtasks: ["Write 1,000-word reflection", "Upload final binder to portal"] }
-        ],
-        custom: [
-          { title: "Phase 1: Planning & Setup", fraction: 0.30, weight: 30, subtasks: ["Set goals and schedule"] },
-          { title: "Phase 2: Core Execution", fraction: 0.70, weight: 40, subtasks: ["Produce primary deliverable"] },
-          { title: "Phase 3: Final Review & External Submission", fraction: 1.0, weight: 30, subtasks: ["Proofread and submit on portal"] }
-        ]
-      };
 
       const TASK_PALETTES = {
         "AI in Education": { bg: "bg-blue-50", text: "text-blue-700", border: "border-blue-200", bar: "from-blue-500 to-indigo-600" },
@@ -1998,9 +1896,9 @@
       }
 
       // -------------------------------------------------------------
-      // STATE MANAGEMENT (Safe LocalStorage)
+      // STATE MANAGEMENT (English key)
       // -------------------------------------------------------------
-      const STORAGE_KEY = "task_helper_portal_v1";
+      const STORAGE_KEY = "task_helper_portal_en_v4";
 
       class AppState {
         constructor() {
@@ -2014,9 +1912,9 @@
           this.studentStatus = "ALL";
           this.studentSort = "DUE_ASC";
           this.studentActivityLog = [
-            { text: "AI in Education: Curated sources in Gemini notebook", time: "1 hour ago" },
-            { text: "Conferences: Dispatched poster abstract via Gmail", time: "Yesterday" },
-            { text: "TEFL Acquisition: Uploaded phonetic profile to canvas", time: "2 days ago" }
+            { text: "AI in Education: Prepared draft for Reflection Log #1 in Gmail", time: "1 hour ago" },
+            { text: "Conferences: Rehearsed presentation for CIES Northeast Regional Conference", time: "Yesterday" },
+            { text: "Bills: Verified receipts for Meeting refunds voucher", time: "2 days ago" }
           ];
 
           this.teacherClasses = [];
@@ -2083,7 +1981,7 @@
       let phaseDistChartInstance = null;
 
       // -------------------------------------------------------------
-      // RENDER GLOBAL PORTALS BAR & SUBMISSION PORTAL CARDS
+      // RENDER PORTALS BAR & PORTALS DIRECTORY
       // -------------------------------------------------------------
       function renderGlobalPortalBar() {
         const bar = document.getElementById("globalPortalLinksBar");
@@ -2185,7 +2083,7 @@
       }
 
       // -------------------------------------------------------------
-      // STUDENT LOGIC HELPERS
+      // CALCULATIONS & FORMATTING (English)
       // -------------------------------------------------------------
       function calculateAssignmentProgress(asg) {
         if (!asg.phases || asg.phases.length === 0) return 0;
@@ -2227,7 +2125,7 @@
       }
 
       function formatDate(dateStr) {
-        if (!dateStr) return "No date";
+        if (!dateStr) return "TBD";
         try {
           const [y, m, d] = dateStr.split("-");
           const date = new Date(parseInt(y), parseInt(m) - 1, parseInt(d));
@@ -2458,7 +2356,7 @@
               <h3 class="text-base font-bold text-slate-900 tracking-tight leading-snug hover:text-brand-600 cursor-pointer" data-action="student-open-detail" data-asg-id="${asg.id}">
                 ${asg.title}
               </h3>
-              ${asg.notes ? `<p class="text-xs text-slate-500 mt-1 line-clamp-2">${asg.notes}</p>` : ''}
+              ${asg.notes ? `<p class="text-xs text-slate-500 mt-1 line-clamp-2 italic">${asg.notes}</p>` : ''}
 
               <!-- Progress Bar -->
               <div class="mt-4">
@@ -2474,17 +2372,15 @@
               ${activeHtml}
             </div>
 
-            <!-- Card Footer with Submission Point Redirect & Manage Phases -->
             <div class="px-5 py-3 bg-slate-50/80 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
               <div class="flex items-center gap-1.5 text-xs">
                 <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
                 <span class="${days.isOverdue ? 'text-rose-600 font-bold' : days.isUrgent ? 'text-amber-600 font-semibold' : 'text-slate-600'}">
-                  Due ${formatDate(asg.dueDate)}
+                  Due ${formatDate(asg.dueDate)} (${days.text})
                 </span>
               </div>
 
               <div class="flex items-center gap-2">
-                <!-- External Submission Point Button -->
                 <a href="${portalUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-bold border transition ${portalStyle}" title="Redirect to ${portalName} (${portalUrl}) to complete submission">
                   <span>Submit: ${portalName}</span>
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
@@ -2662,7 +2558,7 @@
                 </div>
                 <div class="flex items-center gap-3 text-xs">
                   <a href="${portalUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md border font-semibold ${portalStyle}">
-                    <span>Submit on ${portalName}</span>
+                    <span>Submit: ${portalName}</span>
                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                   </a>
                   <span class="text-slate-500">Due: <strong class="text-slate-800">${formatDate(asg.dueDate)}</strong></span>
@@ -2733,7 +2629,7 @@
         const ctxBar = document.getElementById("progressByAssignmentChart");
         if (ctxBar && window.Chart) {
           if (progressChartInstance) progressChartInstance.destroy();
-          const labels = asgs.map(a => `${a.course.split(" ")[0]}: ${a.title.length > 18 ? a.title.slice(0, 16) + '...' : a.title}`);
+          const labels = asgs.map(a => `${a.course.split(" ")[0]}: ${a.title.length > 14 ? a.title.slice(0, 12) + '...' : a.title}`);
           const values = asgs.map(a => calculateAssignmentProgress(a));
 
           progressChartInstance = new Chart(ctxBar, {
@@ -2749,7 +2645,8 @@
                   'rgba(168, 85, 247, 0.85)',
                   'rgba(245, 158, 11, 0.85)',
                   'rgba(16, 185, 129, 0.85)',
-                  'rgba(14, 165, 233, 0.85)'
+                  'rgba(14, 165, 233, 0.85)',
+                  'rgba(99, 102, 241, 0.85)'
                 ],
                 borderRadius: 8
               }]
@@ -2802,7 +2699,7 @@
 
         document.getElementById("teacherKpiClassCount").textContent = classes.length;
         const totalEnrolled = classes.reduce((acc, c) => acc + (parseInt(c.studentCount) || 0), 0);
-        document.getElementById("teacherKpiStudentCount").textContent = `${totalEnrolled} students`;
+        document.getElementById("teacherKpiStudentCount").textContent = `${totalEnrolled} enrolled`;
 
         const totalAssigned = submissions.length;
         const turnedIn = submissions.filter(s => s.status === "SUBMITTED" || s.status === "GRADED").length;
@@ -3013,7 +2910,7 @@
       }
 
       // -------------------------------------------------------------
-      // PORTAL MANAGER MODAL (ADD / EDIT SUBMISSION WEBSITE LINKS)
+      // PORTAL MANAGER MODAL
       // -------------------------------------------------------------
       function openPortalManagerModal(portalId = null) {
         document.getElementById("editPortalId").value = portalId || "";
@@ -3037,7 +2934,7 @@
       }
 
       // -------------------------------------------------------------
-      // TEACHER MODALS & SUBMISSION GRADING
+      // TEACHER GRADE MODAL
       // -------------------------------------------------------------
       let currentGradingSubmissionId = null;
 
@@ -3090,7 +2987,7 @@
       }
 
       // -------------------------------------------------------------
-      // MODAL: STUDENT CREATE / EDIT ASSIGNMENT
+      // STUDENT CREATE / EDIT ASSIGNMENT MODAL
       // -------------------------------------------------------------
       let currentEditingPhases = [];
 
@@ -3112,39 +3009,55 @@
         due.setDate(due.getDate() + 14);
         document.getElementById("formDueDate").value = due.toISOString().split("T")[0];
 
-        document.getElementById("formTemplate").value = "research_paper";
-        generatePhasesFromTemplate("research_paper");
+        initCustomPersonalizedPhases();
 
         document.getElementById("assignmentModal").classList.remove("hidden");
       }
 
-      function generatePhasesFromTemplate(templateKey) {
-        const template = PHASE_TEMPLATES[templateKey] || PHASE_TEMPLATES.research_paper;
+      function initCustomPersonalizedPhases() {
         const startStr = document.getElementById("formStartDate").value;
         const dueStr = document.getElementById("formDueDate").value;
         const start = startStr ? new Date(startStr) : new Date();
         const due = dueStr ? new Date(dueStr) : new Date(start.getTime() + 14 * 86400000);
-        const totalSpan = Math.max(1, due.getTime() - start.getTime());
+        const span = Math.max(1, due.getTime() - start.getTime());
 
-        currentEditingPhases = template.map((step, idx) => {
-          const stepTime = new Date(start.getTime() + totalSpan * step.fraction);
-          const y = stepTime.getFullYear();
-          const m = String(stepTime.getMonth() + 1).padStart(2, "0");
-          const d = String(stepTime.getDate()).padStart(2, "0");
+        const d1 = new Date(start.getTime() + span * 0.33);
+        const d2 = new Date(start.getTime() + span * 0.66);
+        const d3 = due;
 
-          return {
-            id: `p-${Date.now()}-${idx}`,
-            title: step.title,
-            targetDate: `${y}-${m}-${d}`,
+        const fmt = (dt) => {
+          const y = dt.getFullYear();
+          const m = String(dt.getMonth() + 1).padStart(2, "0");
+          const d = String(dt.getDate()).padStart(2, "0");
+          return `${y}-${m}-${d}`;
+        };
+
+        currentEditingPhases = [
+          {
+            id: `p-${Date.now()}-0`,
+            title: "Phase 1: Research, Outline & Sourcing",
+            targetDate: fmt(d1),
             completed: false,
-            weight: step.weight,
-            subtasks: step.subtasks.map((st, sidx) => ({
-              id: `st-${Date.now()}-${idx}-${sidx}`,
-              text: st,
-              completed: false
-            }))
-          };
-        });
+            weight: 30,
+            subtasks: [{ id: `st-${Date.now()}-0`, text: "Collect reference materials and draft outline", completed: false }]
+          },
+          {
+            id: `p-${Date.now()}-1`,
+            title: "Phase 2: Core Development & Drafting",
+            targetDate: fmt(d2),
+            completed: false,
+            weight: 40,
+            subtasks: [{ id: `st-${Date.now()}-1`, text: "Complete core draft deliverables", completed: false }]
+          },
+          {
+            id: `p-${Date.now()}-2`,
+            title: "Phase 3: Final Review & Portal Submission",
+            targetDate: fmt(d3),
+            completed: false,
+            weight: 30,
+            subtasks: [{ id: `st-${Date.now()}-2`, text: "Submit final output via external submission link", completed: false }]
+          }
+        ];
 
         renderFormPhasesList();
       }
@@ -3156,7 +3069,7 @@
             <span class="w-5 text-center font-bold text-slate-400">${idx + 1}</span>
             <input type="text" data-phase-index="${idx}" data-field="title" value="${ph.title}" placeholder="Phase Name" class="flex-1 px-2 py-1 bg-white border border-slate-200 rounded text-xs" />
             <input type="date" data-phase-index="${idx}" data-field="date" value="${ph.targetDate}" class="w-32 px-1.5 py-1 bg-white border border-slate-200 rounded text-xs" />
-            <button type="button" data-phase-index="${idx}" data-action="remove-phase" class="text-rose-500 hover:text-rose-700 px-1 font-bold">✕</button>
+            <button type="button" data-phase-index="${idx}" data-action="remove-phase" class="text-rose-500 hover:text-rose-700 px-1 font-bold" title="Remove phase">✕</button>
           </div>
         `).join("");
 
@@ -3184,7 +3097,7 @@
       }
 
       // -------------------------------------------------------------
-      // STUDENT DETAIL & CHECKLIST MODAL
+      // DETAILS MODAL
       // -------------------------------------------------------------
       let currentDetailAssignmentId = null;
 
@@ -3363,7 +3276,7 @@
       }
 
       // -------------------------------------------------------------
-      // FOCUS TIMER & AUDIO GENERATOR
+      // FOCUS TIMER & AUDIO
       // -------------------------------------------------------------
       let timerDuration = 25 * 60;
       let timerRemaining = 25 * 60;
@@ -3472,7 +3385,7 @@
           ambientNoiseNode.start();
           document.getElementById("audioStatusLabel").textContent = "Playing";
         } catch (e) {
-          console.warn("Ambient audio error:", e);
+          console.warn("Ambient noise error:", e);
         }
       }
 
@@ -3589,7 +3502,7 @@
       }
 
       // -------------------------------------------------------------
-      // ATTACH LISTENERS
+      // EVENT LISTENERS
       // -------------------------------------------------------------
       function initEventListeners() {
         document.getElementById("roleBtnStudent").onclick = () => switchRole("student");
@@ -3603,7 +3516,6 @@
           btn.onclick = () => switchTeacherView(btn.getAttribute("data-teacher-view"));
         });
 
-        // Student Filters
         document.getElementById("searchInput").oninput = (e) => {
           state.studentSearch = e.target.value;
           renderStudentOverview();
@@ -3638,7 +3550,6 @@
           renderStudentOverview();
         };
 
-        // Portal Manager Modal Listeners
         document.getElementById("managePortalsMenuBtn").onclick = () => openPortalManagerModal();
         document.getElementById("closePortalModalBtn").onclick = () => document.getElementById("portalManagerModal").classList.add("hidden");
         document.getElementById("cancelPortalModalBtn").onclick = () => document.getElementById("portalManagerModal").classList.add("hidden");
@@ -3664,7 +3575,6 @@
             }
             showToast(`Submission portal "${name}" updated!`);
           } else {
-            // Check if there is an empty reserved slot to fill, or append a new one and keep 2 reserved slots
             state.submissionPortals.splice(state.submissionPortals.length - 2, 0, {
               id: `portal-${Date.now()}`,
               name,
@@ -3682,19 +3592,14 @@
           renderPortalsDirectoryGrids();
         };
 
-        // Student Project Modal Form
         document.getElementById("studentAddBtn").onclick = () => openNewAssignmentModal();
         document.getElementById("closeModalBtn").onclick = () => document.getElementById("assignmentModal").classList.add("hidden");
         document.getElementById("cancelModalBtn").onclick = () => document.getElementById("assignmentModal").classList.add("hidden");
 
-        document.getElementById("formTemplate").onchange = (e) => generatePhasesFromTemplate(e.target.value);
-        document.getElementById("formStartDate").onchange = () => generatePhasesFromTemplate(document.getElementById("formTemplate").value);
-        document.getElementById("formDueDate").onchange = () => generatePhasesFromTemplate(document.getElementById("formTemplate").value);
-
         document.getElementById("formAddPhaseBtn").onclick = () => {
           currentEditingPhases.push({
             id: `p-${Date.now()}`,
-            title: "Custom Milestone Step",
+            title: `Phase ${currentEditingPhases.length + 1}: Milestone Step`,
             targetDate: document.getElementById("formDueDate").value || new Date().toISOString().split("T")[0],
             completed: false,
             weight: 20,
@@ -3783,7 +3688,6 @@
           updateStudentAnalytics();
         };
 
-        // Detail Modal Listeners
         document.getElementById("closeDetailModalBtn").onclick = () => document.getElementById("phaseDetailModal").classList.add("hidden");
         document.getElementById("detailDoneBtn").onclick = () => document.getElementById("phaseDetailModal").classList.add("hidden");
 
@@ -3802,7 +3706,6 @@
           document.getElementById("formPriority").value = asg.priority;
           document.getElementById("formWeight").value = asg.weight || 25;
           document.getElementById("formNotes").value = asg.notes || "";
-          document.getElementById("formTemplate").value = "custom";
           populatePortalDropdowns(asg.submissionPortalName || "canvas");
           document.getElementById("formCustomSubmissionUrl").value = "";
 
@@ -3833,7 +3736,7 @@
           if (!asg) return;
           asg.phases.push({
             id: `p-${Date.now()}`,
-            title: `New Phase ${asg.phases.length + 1}`,
+            title: `Phase ${asg.phases.length + 1}: Milestone Step`,
             targetDate: asg.dueDate,
             completed: false,
             weight: 15,
@@ -3846,7 +3749,6 @@
           renderStudentTimeline();
         };
 
-        // Teacher Actions
         document.getElementById("teacherNewClassBtn").onclick = () => openNewClassModal();
         document.getElementById("teacherNewTaskBtn").onclick = () => openAssignTaskModal();
         document.getElementById("teacherQuickAssignBtn").onclick = () => openAssignTaskModal();
@@ -3859,7 +3761,7 @@
           const name = document.getElementById("classFormName").value.trim();
           const code = document.getElementById("classFormCode").value.trim() || `SEC-0${state.teacherClasses.length + 1}`;
           const level = document.getElementById("classFormLevel").value;
-          const studentCount = parseInt(document.getElementById("classFormStudents").value) || 25;
+          const studentCount = parseInt(document.getElementById("classFormStudents").value) || 28;
 
           const newClass = {
             id: `cls-${Date.now()}`,
@@ -3923,7 +3825,7 @@
               status: idx === 0 ? "SUBMITTED" : idx === 1 ? "GRADED" : "IN_PROGRESS",
               score: idx === 1 ? 92 : null,
               maxScore: points,
-              excerpt: `${name}'s submission for ${title} via ${portalName}.`,
+              excerpt: `${name}'s submission draft for ${title}.`,
               feedback: idx === 1 ? "Great analysis of core themes." : ""
             });
           });
@@ -3931,10 +3833,9 @@
           state.save();
           document.getElementById("teacherAssignModal").classList.add("hidden");
           renderTeacherDashboard();
-          showToast(`Task assigned via ${portalName}!`);
+          showToast(`Task assigned to ${targetClass ? targetClass.name : 'class'}!`);
         };
 
-        // Teacher Grade Modal
         document.getElementById("closeGradeModalBtn").onclick = () => document.getElementById("teacherGradeModal").classList.add("hidden");
         document.getElementById("cancelGradeModalBtn").onclick = () => document.getElementById("teacherGradeModal").classList.add("hidden");
 
@@ -3953,7 +3854,6 @@
           showToast(`Grade saved for ${sub.studentName}!`);
         };
 
-        // Teacher Filters
         document.getElementById("teacherClassFilter").onchange = (e) => {
           state.teacherClassFilter = e.target.value;
           renderTeacherSubmissionsTable();
@@ -3969,7 +3869,6 @@
           renderTeacherSubmissionsTable();
         };
 
-        // Options dropdown & IO
         const optionsBtn = document.getElementById("optionsMenuBtn");
         const optionsDropdown = document.getElementById("optionsDropdown");
         optionsBtn.onclick = (e) => {
@@ -3979,7 +3878,7 @@
         document.addEventListener("click", () => optionsDropdown.classList.add("hidden"));
 
         document.getElementById("resetDemoBtn").onclick = () => {
-          showConfirm("Restore Demo Curriculum & Portals?", "This resets student tasks, teacher classes, and default submission portals.", () => {
+          showConfirm("Restore Demo Curriculum & Portals?", "This resets all assignments, classes, and submission portal links.", () => {
             state.resetToDemo();
             switchRole(state.role);
             showToast("Curriculum roadmap & portals restored!");
@@ -4046,7 +3945,6 @@
           }
         };
 
-        // Timer buttons
         document.getElementById("timerMode25").onclick = () => {
           timerDuration = 25 * 60;
           resetTimer();
@@ -4085,7 +3983,6 @@
         };
       }
 
-      // App Bootstrap
       window.app = {
         openNewAssignmentModal,
         openAssignmentDetailsModal,
